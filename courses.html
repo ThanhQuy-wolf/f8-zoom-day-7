@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Courses</title>
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Font Awesome -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com/libs/font-awesome" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="header__top-bar">
+            <div class="header__top container">
+                <a class="header__logo" href="./courses.html" aria-label="Scholars">
+                    <img
+                        class="header__logo-img"
+                        src="./assets/imgs/logo.webp"
+                        alt="Scholars"
+                    />
+                </a>
+                <nav class="header__nav" aria-label="Primary">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#!">HOME</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="./courses.html">COURSES</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#!">EVENTS</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#!">PAGES</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#!">PORTFOLIO</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#!">BLOG</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#!">SHOP</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#!">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__actions">
+                    <button class="header__action" type="button" aria-label="Search">
+                        <i class="header__action-icon fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <button class="header__action" type="button" aria-label="Cart">
+                        <i class="header__action-icon fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <img
+                class="header__bg"
+                src="./assets/imgs/banner-2.jpeg"
+                alt="Courses banner"
+            />
+            <div class="header__overlay"></div>
+            <div class="header__hero">
+                <h1 class="header__title">COURSES</h1>
+                <p class="header__breadcrumb">
+                    <a class="header__breadcrumb-link" href="#!">Home</a>
+                    <span class="header__breadcrumb-sep">/</span>
+                    <span class="header__breadcrumb-current">Courses</span>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main class="courses">
+            <div class="container">
+                <div class="courses__layout">
+                    <aside class="courses__sidebar sidebar">
+                        <form class="sidebar__search" action="#!">
+                            <div class="search-field">
+                                <input
+                                    class="search-field__input"
+                                    type="search"
+                                    placeholder="Search Course..."
+                                />
+                                <button
+                                    class="search-field__button"
+                                    type="submit"
+                                    aria-label="Search"
+                                >
+                                    <i
+                                        class="search-field__icon fa-solid fa-magnifying-glass"
+                                    ></i>
+                                </button>
+                            </div>
+                        </form>
+
+                        <section class="sidebar__section">
+                            <h2 class="sidebar__title">Topics</h2>
+                            <ul class="sidebar__list">
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Web Design</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Web Development</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Data Science</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!"
+                                        >Mathematics & Stats</a
+                                    >
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Robotics</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!"
+                                        >Digital Marketing</a
+                                    >
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Android Basics</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!"
+                                        >Machine Learning</a
+                                    >
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!"
+                                        >Artificial Intelligence</a
+                                    >
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="sidebar__section">
+                            <h2 class="sidebar__title">Software</h2>
+                            <ul class="sidebar__list">
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Photoshop</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Illustrator</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">HTML</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">CSS</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Java Script</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">DJango</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Apple</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Microsoft</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Ubuntu</a>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="sidebar__section">
+                            <h2 class="sidebar__title">Level</h2>
+                            <ul class="sidebar__list">
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Beginner</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Intermediate</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Advanced</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#!">Expert</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </aside>
+
+                    <section class="courses__content">
+                        <ul class="courses-tabs" aria-label="Course filters">
+                            <li class="courses-tabs__item">
+                                <a
+                                    class="courses-tabs__link courses-tabs__link--active"
+                                    href="#!"
+                                    >New</a
+                                >
+                            </li>
+                            <li class="courses-tabs__item">
+                                <a class="courses-tabs__link" href="#!">Trending</a>
+                            </li>
+                            <li class="courses-tabs__item">
+                                <a class="courses-tabs__link" href="#!">Popular</a>
+                            </li>
+                            <li class="courses-tabs__item">
+                                <a class="courses-tabs__link" href="#!">Best-Selling</a>
+                            </li>
+                            <li class="courses-tabs__item">
+                                <a class="courses-tabs__link" href="#!">Most Rated</a>
+                            </li>
+                        </ul>
+
+                        <div class="courses-grid">
+                            <article class="course-card">
+                                <a class="course-card__img-link" href="#!">
+                                    <img
+                                        class="course-card__img"
+                                        src="./assets/imgs/Course 7.webp"
+                                        alt="Course 7"
+                                    />
+                                </a>
+                                <div class="course-card__body">
+                                    <h3 class="course-card__title">
+                                        <a class="course-card__title-link" href="#!"
+                                            >Introduction to PHP language with Ajax &
+                                            Redux</a
+                                        >
+                                    </h3>
+                                    <p class="course-card__desc">
+                                        In this course, you will learn the of PHP
+                                        Framework and Ajax. This course will build your
+                                        foundation.
+                                    </p>
+                                    <div class="course-card__meta">
+                                        <div class="course-card__teacher">
+                                            <img
+                                                class="course-card__teacher-avatar"
+                                                src="./assets/imgs/avt-chris.webp"
+                                                alt="Chris"
+                                            />
+                                            <span class="course-card__teacher-name"
+                                                >Chris</span
+                                            >
+                                        </div>
+                                        <div class="course-card__students">
+                                            <i
+                                                class="course-card__students-icon fa-solid fa-user"
+                                            ></i>
+                                            <span class="course-card__students-count"
+                                                >575</span
+                                            >
+                                        </div>
+                                        <a
+                                            class="course-card__price course-card__price--free"
+                                            href="#!"
+                                            >Free</a
+                                        >
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="course-card course-card--trending">
+                                <a class="course-card__img-link" href="#!">
+                                    <img
+                                        class="course-card__img"
+                                        src="./assets/imgs/Course 8.webp"
+                                        alt="Course 8"
+                                    />
+                                </a>
+                                <div class="course-card__body">
+                                    <h3 class="course-card__title">
+                                        <a class="course-card__title-link" href="#!"
+                                            >Introduction to DJango Ling with Remax
+                                            options</a
+                                        >
+                                    </h3>
+                                    <p class="course-card__desc">
+                                        In this course, you will learn the of PHP
+                                        Framework and Ajax. This course will build your
+                                        foundation.
+                                    </p>
+                                    <div class="course-card__meta">
+                                        <div class="course-card__teacher">
+                                            <img
+                                                class="course-card__teacher-avatar"
+                                                src="./assets/imgs/avt-kate.webp"
+                                                alt="Kate"
+                                            />
+                                            <span class="course-card__teacher-name"
+                                                >Kate</span
+                                            >
+                                        </div>
+                                        <div class="course-card__students">
+                                            <i
+                                                class="course-card__students-icon fa-solid fa-user"
+                                            ></i>
+                                            <span class="course-card__students-count"
+                                                >620</span
+                                            >
+                                        </div>
+                                        <a class="course-card__price" href="#!">$29</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="course-card">
+                                <a class="course-card__img-link" href="#!">
+                                    <img
+                                        class="course-card__img"
+                                        src="./assets/imgs/Course 9.webp"
+                                        alt="Course 9"
+                                    />
+                                </a>
+                                <div class="course-card__body">
+                                    <h3 class="course-card__title">
+                                        <a class="course-card__title-link" href="#!"
+                                            >Introduction to DJango Ling with Remax
+                                            options</a
+                                        >
+                                    </h3>
+                                    <p class="course-card__desc">
+                                        In this course, you will learn the of PHP
+                                        Framework and Ajax. This course will build your
+                                        foundation.
+                                    </p>
+                                    <div class="course-card__meta">
+                                        <div class="course-card__teacher">
+                                            <img
+                                                class="course-card__teacher-avatar"
+                                                src="./assets/imgs/avt-sarah.webp"
+                                                alt="Sarah"
+                                            />
+                                            <span class="course-card__teacher-name"
+                                                >Sarah</span
+                                            >
+                                        </div>
+                                        <div class="course-card__students">
+                                            <i
+                                                class="course-card__students-icon fa-solid fa-user"
+                                            ></i>
+                                            <span class="course-card__students-count"
+                                                >1575</span
+                                            >
+                                        </div>
+                                        <a class="course-card__price" href="#!">$39</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="course-card">
+                                <a class="course-card__img-link" href="#!">
+                                    <img
+                                        class="course-card__img"
+                                        src="./assets/imgs/Course 7.webp"
+                                        alt="Course 7"
+                                    />
+                                </a>
+                                <div class="course-card__body">
+                                    <h3 class="course-card__title">
+                                        <a class="course-card__title-link" href="#!"
+                                            >Introduction to PHP language with Ajax &
+                                            Redux</a
+                                        >
+                                    </h3>
+                                    <p class="course-card__desc">
+                                        In this course, you will learn the of PHP
+                                        Framework and Ajax. This course will build your
+                                        foundation.
+                                    </p>
+                                    <div class="course-card__meta">
+                                        <div class="course-card__teacher">
+                                            <img
+                                                class="course-card__teacher-avatar"
+                                                src="./assets/imgs/avt-chris.webp"
+                                                alt="Chris"
+                                            />
+                                            <span class="course-card__teacher-name"
+                                                >Chris</span
+                                            >
+                                        </div>
+                                        <div class="course-card__students">
+                                            <i
+                                                class="course-card__students-icon fa-solid fa-user"
+                                            ></i>
+                                            <span class="course-card__students-count"
+                                                >575</span
+                                            >
+                                        </div>
+                                        <a
+                                            class="course-card__price course-card__price--free"
+                                            href="#!"
+                                            >Free</a
+                                        >
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="course-card course-card--trending">
+                                <a class="course-card__img-link" href="#!">
+                                    <img
+                                        class="course-card__img"
+                                        src="./assets/imgs/Course 8.webp"
+                                        alt="Course 8"
+                                    />
+                                </a>
+                                <div class="course-card__body">
+                                    <h3 class="course-card__title">
+                                        <a class="course-card__title-link" href="#!"
+                                            >Introduction to DJango Ling with Remax
+                                            options</a
+                                        >
+                                    </h3>
+                                    <p class="course-card__desc">
+                                        In this course, you will learn the of PHP
+                                        Framework and Ajax. This course will build your
+                                        foundation.
+                                    </p>
+                                    <div class="course-card__meta">
+                                        <div class="course-card__teacher">
+                                            <img
+                                                class="course-card__teacher-avatar"
+                                                src="./assets/imgs/avt-kate.webp"
+                                                alt="Kate"
+                                            />
+                                            <span class="course-card__teacher-name"
+                                                >Kate</span
+                                            >
+                                        </div>
+                                        <div class="course-card__students">
+                                            <i
+                                                class="course-card__students-icon fa-solid fa-user"
+                                            ></i>
+                                            <span class="course-card__students-count"
+                                                >620</span
+                                            >
+                                        </div>
+                                        <a class="course-card__price" href="#!">$29</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="course-card">
+                                <a class="course-card__img-link" href="#!">
+                                    <img
+                                        class="course-card__img"
+                                        src="./assets/imgs/Course 9.webp"
+                                        alt="Course 9"
+                                    />
+                                </a>
+                                <div class="course-card__body">
+                                    <h3 class="course-card__title">
+                                        <a class="course-card__title-link" href="#!"
+                                            >Introduction to DJango Ling with Remax
+                                            options</a
+                                        >
+                                    </h3>
+                                    <p class="course-card__desc">
+                                        In this course, you will learn the of PHP
+                                        Framework and Ajax. This course will build your
+                                        foundation.
+                                    </p>
+                                    <div class="course-card__meta">
+                                        <div class="course-card__teacher">
+                                            <img
+                                                class="course-card__teacher-avatar"
+                                                src="./assets/imgs/avt-sarah.webp"
+                                                alt="Sarah"
+                                            />
+                                            <span class="course-card__teacher-name"
+                                                >Sarah</span
+                                            >
+                                        </div>
+                                        <div class="course-card__students">
+                                            <i
+                                                class="course-card__students-icon fa-solid fa-user"
+                                            ></i>
+                                            <span class="course-card__students-count"
+                                                >1575</span
+                                            >
+                                        </div>
+                                        <a class="course-card__price" href="#!">$39</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="course-card">
+                                <a class="course-card__img-link" href="#!">
+                                    <img
+                                        class="course-card__img"
+                                        src="./assets/imgs/Course 7.webp"
+                                        alt="Course 7"
+                                    />
+                                </a>
+                                <div class="course-card__body">
+                                    <h3 class="course-card__title">
+                                        <a class="course-card__title-link" href="#!"
+                                            >Introduction to PHP language with Ajax &
+                                            Redux</a
+                                        >
+                                    </h3>
+                                    <p class="course-card__desc">
+                                        In this course, you will learn the of PHP
+                                        Framework and Ajax. This course will build your
+                                        foundation.
+                                    </p>
+                                    <div class="course-card__meta">
+                                        <div class="course-card__teacher">
+                                            <img
+                                                class="course-card__teacher-avatar"
+                                                src="./assets/imgs/avt-chris.webp"
+                                                alt="Chris"
+                                            />
+                                            <span class="course-card__teacher-name"
+                                                >Chris</span
+                                            >
+                                        </div>
+                                        <div class="course-card__students">
+                                            <i
+                                                class="course-card__students-icon fa-solid fa-user"
+                                            ></i>
+                                            <span class="course-card__students-count"
+                                                >575</span
+                                            >
+                                        </div>
+                                        <a
+                                            class="course-card__price course-card__price--free"
+                                            href="#!"
+                                            >Free</a
+                                        >
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="course-card course-card--trending">
+                                <a class="course-card__img-link" href="#!">
+                                    <img
+                                        class="course-card__img"
+                                        src="./assets/imgs/Course 8.webp"
+                                        alt="Course 8"
+                                    />
+                                </a>
+                                <div class="course-card__body">
+                                    <h3 class="course-card__title">
+                                        <a class="course-card__title-link" href="#!"
+                                            >Introduction to DJango Ling with Remax
+                                            options</a
+                                        >
+                                    </h3>
+                                    <p class="course-card__desc">
+                                        In this course, you will learn the of PHP
+                                        Framework and Ajax. This course will build your
+                                        foundation.
+                                    </p>
+                                    <div class="course-card__meta">
+                                        <div class="course-card__teacher">
+                                            <img
+                                                class="course-card__teacher-avatar"
+                                                src="./assets/imgs/avt-kate.webp"
+                                                alt="Kate"
+                                            />
+                                            <span class="course-card__teacher-name"
+                                                >Kate</span
+                                            >
+                                        </div>
+                                        <div class="course-card__students">
+                                            <i
+                                                class="course-card__students-icon fa-solid fa-user"
+                                            ></i>
+                                            <span class="course-card__students-count"
+                                                >620</span
+                                            >
+                                        </div>
+                                        <a class="course-card__price" href="#!">$29</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="course-card">
+                                <a class="course-card__img-link" href="#!">
+                                    <img
+                                        class="course-card__img"
+                                        src="./assets/imgs/Course 9.webp"
+                                        alt="Course 9"
+                                    />
+                                </a>
+                                <div class="course-card__body">
+                                    <h3 class="course-card__title">
+                                        <a class="course-card__title-link" href="#!"
+                                            >Introduction to DJango Ling with Remax
+                                            options</a
+                                        >
+                                    </h3>
+                                    <p class="course-card__desc">
+                                        In this course, you will learn the of PHP
+                                        Framework and Ajax. This course will build your
+                                        foundation.
+                                    </p>
+                                    <div class="course-card__meta">
+                                        <div class="course-card__teacher">
+                                            <img
+                                                class="course-card__teacher-avatar"
+                                                src="./assets/imgs/avt-sarah.webp"
+                                                alt="Sarah"
+                                            />
+                                            <span class="course-card__teacher-name"
+                                                >Sarah</span
+                                            >
+                                        </div>
+                                        <div class="course-card__students">
+                                            <i
+                                                class="course-card__students-icon fa-solid fa-user"
+                                            ></i>
+                                            <span class="course-card__students-count"
+                                                >1575</span
+                                            >
+                                        </div>
+                                        <a class="course-card__price" href="#!">$39</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <ul class="pagination" aria-label="Pagination">
+                            <li class="pagination__item">
+                                <a
+                                    class="pagination__link pagination__link--active"
+                                    href="#!"
+                                    >1</a
+                                >
+                            </li>
+                            <li class="pagination__item">
+                                <a class="pagination__link" href="#!">2</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a class="pagination__link" href="#!">3</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a class="pagination__link pagination__link--next" href="#!">Next</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__layout">
+                    <section class="footer__col footer__col--about">
+                        <a
+                            class="footer__logo"
+                            href="./courses.html"
+                            aria-label="Scholars"
+                        >
+                            <img
+                                class="footer__logo-img"
+                                src="./assets/imgs/logo.webp"
+                                alt="Scholars"
+                            />
+                        </a>
+                        <p class="footer__desc">
+                            Scholars provides universal access to the world’s best
+                            education, partnering with top universities and organizations
+                            to offer courses online.
+                        </p>
+                        <p class="footer__copyright">
+                            © 2017 Scholrs Inc. All rights reserved.
+                        </p>
+                        <ul class="footer__store">
+                            <li class="footer__store-item">
+                                <a
+                                    class="footer__store-link"
+                                    href="https://www.apple.com/itunes/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        class="footer__store-img"
+                                        src="./assets/imgs/android.webp"
+                                        alt="Android"
+                                    />
+                                </a>
+                            </li>
+                            <li class="footer__store-item">
+                                <a
+                                    class="footer__store-link"
+                                    href="https://play.google.com/store"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        class="footer__store-img"
+                                        src="./assets/imgs/apple.webp"
+                                        alt="Apple"
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="footer__col">
+                        <h2 class="footer__title">Scholars</h2>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">About Us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Leadership</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Careers</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">FAQ</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Contact</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="footer__col">
+                        <h2 class="footer__title">Product</h2>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Education Light</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Eucation Starter</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Eucation Premium</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Business</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Business Plus</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="footer__col">
+                        <h2 class="footer__title">Support</h2>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Support</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Toll Free Number</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Open Ticket</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">System Requirements</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#!">Feedback</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="footer__col footer__col--subscribe">
+                        <h2 class="footer__title">Subscribe Us</h2>
+                        <p class="footer__desc">
+                            Subscribe us to get all the latest news from us
+                        </p>
+                        <form class="footer__form" action="#!">
+                            <input
+                                class="footer__input"
+                                type="email"
+                                placeholder="Your Email"
+                            />
+                            <button class="footer__button hvr-rectangle-out" type="submit">SEND</button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
