@@ -63,17 +63,12 @@ h6 {
 
 /* Header */
 .header__top-bar {
-    position: sticky;
-    top: -10px;
-    z-index: 10;
-    height: var(--header-top-bar-height);
-    display: flex;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.55);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    margin-bottom: calc(-1 * var(--header-top-bar-height));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    padding-top: 40px;
 }
 
 .header {
@@ -118,42 +113,90 @@ h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 5rem;
+    gap: 22px;
 }
 
 .header__nav-item {
     font-weight: bold;
     color: #fff;
+    position: relative;
 }
 
 .header__nav-link {
     display: block;
-    font-size: 1.4rem;
-    letter-spacing: 0.08em;
+    font-size: 1.5rem;
+    font-family: var(--font-PT-Sans);
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    color: #fff;
+    padding: 0 14px;
+    line-height: 32px;
+    transition: all 0.3s ease-in-out;
+}
+
+.header__nav-link:hover,
+.header__nav-link:focus {
+    color: var(--color-secondary);
+}
+
+/* Dropdown sub-menu */
+.header__nav-item--dropdown {
+    position: relative;
+}
+
+.header__sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: #fff;
+    box-shadow: 0px 4px 10px -2px rgba(0, 0, 0, 0.23);
+    display: none;
+    z-index: 999;
+    padding: 8px 0;
+    list-style: none;
+    margin: 0;
+}
+
+.header__sub-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.3rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.header__sub-menu li a:hover {
+    background: var(--color-secondary);
+    color: #fff;
+}
+
+.header__nav-item--dropdown:hover .header__sub-menu {
+    display: block;
 }
 
 .header__actions {
     display: flex;
     gap: 2.8rem;
+    align-items: center;
 }
 
 .header__action {
-    width: 42px;
-    height: 42px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 32px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 .header__action:hover {
-    background: rgba(255, 255, 255, 0.16);
+    color: var(--color-secondary);
 }
 
 .header__action-icon {
-    font-size: 1.8rem;
-    color: #fff;
+    font-size: 1.6rem;
+    pointer-events: none;
 }
 
 .header__hero {
