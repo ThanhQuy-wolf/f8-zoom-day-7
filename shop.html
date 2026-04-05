@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shop</title>
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="./css/reset.css" />
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="./css/shop.css" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Font Awesome -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com/libs/font-awesome" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="./images/fav-icon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="./images/fav-icon/favicon.svg" />
+        <link rel="shortcut icon" href="./images/fav-icon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/fav-icon/apple-touch-icon.png" />
+        <link rel="manifest" href="./images/fav-icon/site.webmanifest" />
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="header__top-bar">
+            <div class="header__top container">
+                <a class="header__logo" href="./index.html" aria-label="Scholars">
+                    <img
+                        class="header__logo-img"
+                        src="./images/logo/logo.png"
+                        alt="Scholars"
+                    />
+                </a>
+                <nav class="header__nav" aria-label="Primary">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item header__nav-item--dropdown">
+                            <a class="header__nav-link" href="./index.html">HOME</a>
+                            <ul class="header__sub-menu">
+                                <li><a href="./index.html">Home version one</a></li>
+                                <li><a href="./index-2.html">Home version Two</a></li>
+                                <li><a href="./index-3.html">Home video background</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__nav-item header__nav-item--dropdown">
+                            <a class="header__nav-link" href="#">COURSES</a>
+                            <ul class="header__sub-menu">
+                                <li>
+                                    <a href="course-2-column.html">Course 2 Column</a>
+                                </li>
+                                <li>
+                                    <a href="course-3-column.html">Course 3 Column</a>
+                                </li>
+                                <li><a href="course-details.html">Course Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__nav-item header__nav-item--dropdown">
+                            <a class="header__nav-link" href="#">EVENTS</a>
+                            <ul class="header__sub-menu">
+                                <li><a href="event-list.html">Event List</a></li>
+                                <li><a href="event-grid.html">Event Grid</a></li>
+                                <li><a href="event-single.html">Event Single</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__nav-item header__nav-item--dropdown">
+                            <a class="header__nav-link" href="#">PAGES</a>
+                            <ul class="header__sub-menu">
+                                <li><a href="our-teacher.html">Our teachers</a></li>
+                                <li>
+                                    <a href="teachers-profile.html">Teachers profile</a>
+                                </li>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="404.html">Error page</a></li>
+                                <li><a href="faq.html">FAQ Page</a></li>
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="sign-up.html">Sign up</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__nav-item header__nav-item--dropdown">
+                            <a class="header__nav-link" href="#">PORTFOLIO</a>
+                            <ul class="header__sub-menu">
+                                <li>
+                                    <a href="portfolio-2-column.html"
+                                        >Portfolio 2 column</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="portfolio-3-column.html"
+                                        >Portfolio 3 column</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="portfolio-4-column.html"
+                                        >Portfolio 4 column</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="header__nav-item header__nav-item--dropdown">
+                            <a class="header__nav-link" href="#">BLOG</a>
+                            <ul class="header__sub-menu">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog-details.html">Blog details</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__nav-item header__nav-item--dropdown">
+                            <a class="header__nav-link" href="#">SHOP</a>
+                            <ul class="header__sub-menu">
+                                <li><a href="shop.html">Shop Page</a></li>
+                                <li><a href="shop-single.html">Shop Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="contact-us.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__actions">
+                    <button class="header__action" type="button" aria-label="Search">
+                        <i class="header__action-icon fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <button class="header__action" type="button" aria-label="Cart">
+                        <i class="header__action-icon fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <img class="header__bg" src="images/shop/banner-10.webp" alt="Shop banner" />
+            <div class="header__overlay"></div>
+            <div class="header__hero">
+                <h3 class="header__title">SHOP</h3>
+                <p class="header__breadcrumb">
+                    <a class="header__breadcrumb-link" href="index.html">Home</a>
+                    <span class="header__breadcrumb-sep">/</span>
+                    <a class="header__breadcrumb-link" href="index.html">Pages</a>
+                    <span class="header__breadcrumb-sep">/</span>
+                    <span class="header__breadcrumb-current">Shop</span>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main class="shop">
+            <div class="container">
+                <div class="shop__layout">
+                    <!-- Products Section -->
+                    <section class="shop__content">
+                        <ul class="shop-filter" aria-label="Shop filters">
+                            <li class="shop-filter__item">
+                                <select
+                                    class="shop-filter__select"
+                                    aria-label="Shop filter"
+                                >
+                                    <option>Select Filter</option>
+                                    <option>By Price</option>
+                                    <option>By Category</option>
+                                    <option>By Date</option>
+                                </select>
+                            </li>
+                            <li class="shop-filter__item shop-filter__item--result">
+                                Showing 1-9 of 25 Result
+                            </li>
+                        </ul>
+
+                        <div class="shop-grid">
+                            <article class="product-card">
+                                <div class="product-card__image">
+                                    <img
+                                        src="images/shop/5.jpg"
+                                        alt="Ten steps to making"
+                                    />
+                                </div>
+                                <div class="product-card__info">
+                                    <h6 class="product-card__title">
+                                        <a
+                                            class="product-card__title-link"
+                                            href="shop-single.html"
+                                            >Ten steps to making</a
+                                        >
+                                    </h6>
+                                    <strong class="product-card__price">$ 89</strong>
+                                    <a class="product-card__btn" href="#">Add To Cart</a>
+                                </div>
+                            </article>
+
+                            <article class="product-card">
+                                <div class="product-card__image">
+                                    <img
+                                        src="images/shop/6.jpg"
+                                        alt="Long-Tail SEO Strategy"
+                                    />
+                                </div>
+                                <div class="product-card__info">
+                                    <h6 class="product-card__title">
+                                        <a
+                                            class="product-card__title-link"
+                                            href="shop-single.html"
+                                            >Long-Tail SEO Strategy</a
+                                        >
+                                    </h6>
+                                    <strong class="product-card__price">$ 19</strong>
+                                    <a class="product-card__btn" href="#">Add To Cart</a>
+                                </div>
+                            </article>
+
+                            <article class="product-card">
+                                <div class="product-card__image">
+                                    <img
+                                        src="images/shop/7.jpg"
+                                        alt="Create optimized content"
+                                    />
+                                </div>
+                                <div class="product-card__info">
+                                    <h6 class="product-card__title">
+                                        <a
+                                            class="product-card__title-link"
+                                            href="shop-single.html"
+                                            >Create optimized content</a
+                                        >
+                                    </h6>
+                                    <strong class="product-card__price">$ 79</strong>
+                                    <a class="product-card__btn" href="#">Add To Cart</a>
+                                </div>
+                            </article>
+
+                            <article class="product-card">
+                                <div class="product-card__image">
+                                    <img
+                                        src="images/shop/8.jpg"
+                                        alt="Boost Your Organic"
+                                    />
+                                </div>
+                                <div class="product-card__info">
+                                    <h6 class="product-card__title">
+                                        <a
+                                            class="product-card__title-link"
+                                            href="shop-single.html"
+                                            >Boost Your Organic</a
+                                        >
+                                    </h6>
+                                    <strong class="product-card__price">$ 9</strong>
+                                    <a class="product-card__btn" href="#">Add To Cart</a>
+                                </div>
+                            </article>
+
+                            <article class="product-card">
+                                <div class="product-card__image">
+                                    <img src="images/shop/9.jpg" alt="Search Rankings" />
+                                </div>
+                                <div class="product-card__info">
+                                    <h6 class="product-card__title">
+                                        <a
+                                            class="product-card__title-link"
+                                            href="shop-single.html"
+                                            >Search Rankings</a
+                                        >
+                                    </h6>
+                                    <strong class="product-card__price">$ 47</strong>
+                                    <a class="product-card__btn" href="#">Add To Cart</a>
+                                </div>
+                            </article>
+
+                            <article class="product-card">
+                                <div class="product-card__image">
+                                    <img src="images/shop/10.jpg" alt="School PPC" />
+                                </div>
+                                <div class="product-card__info">
+                                    <h6 class="product-card__title">
+                                        <a
+                                            class="product-card__title-link"
+                                            href="shop-single.html"
+                                            >School PPC</a
+                                        >
+                                    </h6>
+                                    <strong class="product-card__price">$ 36</strong>
+                                    <a class="product-card__btn" href="#">Add To Cart</a>
+                                </div>
+                            </article>
+
+                            <article class="product-card">
+                                <div class="product-card__image">
+                                    <img src="images/shop/11.jpg" alt="Guide to SEO" />
+                                </div>
+                                <div class="product-card__info">
+                                    <h6 class="product-card__title">
+                                        <a
+                                            class="product-card__title-link"
+                                            href="shop-single.html"
+                                            >Guide to SEO</a
+                                        >
+                                    </h6>
+                                    <strong class="product-card__price">$ 19</strong>
+                                    <a class="product-card__btn" href="#">Add To Cart</a>
+                                </div>
+                            </article>
+
+                            <article class="product-card">
+                                <div class="product-card__image">
+                                    <img
+                                        src="images/shop/12.jpg"
+                                        alt="Influencer Marketing"
+                                    />
+                                </div>
+                                <div class="product-card__info">
+                                    <h6 class="product-card__title">
+                                        <a
+                                            class="product-card__title-link"
+                                            href="shop-single.html"
+                                            >Influencer Marketing</a
+                                        >
+                                    </h6>
+                                    <strong class="product-card__price">$ 90</strong>
+                                    <a class="product-card__btn" href="#">Add To Cart</a>
+                                </div>
+                            </article>
+
+                            <article class="product-card">
+                                <div class="product-card__image">
+                                    <img src="images/shop/13.jpg" alt="PPC Agency" />
+                                </div>
+                                <div class="product-card__info">
+                                    <h6 class="product-card__title">
+                                        <a
+                                            class="product-card__title-link"
+                                            href="shop-single.html"
+                                            >PPC Agency</a
+                                        >
+                                    </h6>
+                                    <strong class="product-card__price">$ 78</strong>
+                                    <a class="product-card__btn" href="#">Add To Cart</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <ul class="pagination" aria-label="Pagination">
+                            <li class="pagination__item">
+                                <a
+                                    class="pagination__link pagination__link--active"
+                                    href="#"
+                                    >1</a
+                                >
+                            </li>
+                            <li class="pagination__item">
+                                <a class="pagination__link" href="#">2</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a class="pagination__link" href="#">3</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a
+                                    class="pagination__link pagination__link--next"
+                                    href="#"
+                                >
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Sidebar -->
+                    <aside class="shop__sidebar sidebar">
+                        <form class="sidebar__search" action="#">
+                            <div class="search-field">
+                                <input
+                                    class="search-field__input"
+                                    type="search"
+                                    placeholder="Search Product..."
+                                />
+                                <button
+                                    class="search-field__button"
+                                    type="submit"
+                                    aria-label="Search"
+                                >
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+
+                        <section class="sidebar__section">
+                            <h2 class="sidebar__title">Shop Categories</h2>
+                            <ul class="sidebar__list">
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#">SMM Shop</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#">Network Security</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#">Programming</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#"
+                                        >Search Engine Opt</a
+                                    >
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#">Social Media</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#">Technology</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#">User Experience</a>
+                                </li>
+                                <li class="sidebar__item">
+                                    <a class="sidebar__link" href="#"
+                                        >Website Analytics</a
+                                    >
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="sidebar__section">
+                            <h2 class="sidebar__title">Popular Products</h2>
+                            <ul class="sidebar__popular-list">
+                                <li class="sidebar__popular-item">
+                                    <img
+                                        class="sidebar__popular-img"
+                                        src="images/shop/1.jpg"
+                                        alt="Analysis & data"
+                                    />
+                                    <div class="sidebar__popular-info">
+                                        <h6 class="sidebar__popular-name">
+                                            <a class="sidebar__popular-link" href="#"
+                                                >Analysis &amp; data</a
+                                            >
+                                        </h6>
+                                        <strong class="sidebar__popular-price"
+                                            >$ 235</strong
+                                        >
+                                    </div>
+                                </li>
+                                <li class="sidebar__popular-item">
+                                    <img
+                                        class="sidebar__popular-img"
+                                        src="images/shop/2.jpg"
+                                        alt="Software Dev"
+                                    />
+                                    <div class="sidebar__popular-info">
+                                        <h6 class="sidebar__popular-name">
+                                            <a class="sidebar__popular-link" href="#"
+                                                >Software Dev...</a
+                                            >
+                                        </h6>
+                                        <strong class="sidebar__popular-price"
+                                            >$ 35</strong
+                                        >
+                                    </div>
+                                </li>
+                                <li class="sidebar__popular-item">
+                                    <img
+                                        class="sidebar__popular-img"
+                                        src="images/shop/3.jpg"
+                                        alt="Marketing Plan"
+                                    />
+                                    <div class="sidebar__popular-info">
+                                        <h6 class="sidebar__popular-name">
+                                            <a class="sidebar__popular-link" href="#"
+                                                >Marketing Plan</a
+                                            >
+                                        </h6>
+                                        <strong class="sidebar__popular-price"
+                                            >$ 75</strong
+                                        >
+                                    </div>
+                                </li>
+                                <li class="sidebar__popular-item">
+                                    <img
+                                        class="sidebar__popular-img"
+                                        src="images/shop/4.jpg"
+                                        alt="Google Expands"
+                                    />
+                                    <div class="sidebar__popular-info">
+                                        <h6 class="sidebar__popular-name">
+                                            <a class="sidebar__popular-link" href="#"
+                                                >Google Expands</a
+                                            >
+                                        </h6>
+                                        <strong class="sidebar__popular-price"
+                                            >$ 234</strong
+                                        >
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__layout">
+                    <section class="footer__col footer__col--about">
+                        <a class="footer__logo" href="index.html" aria-label="Scholars">
+                            <img
+                                class="footer__logo-img"
+                                src="images/logo/logo.png"
+                                alt="Scholars"
+                            />
+                        </a>
+                        <p class="footer__desc">
+                            Scholars provides universal access to the world's best
+                            education, partnering with top universities and organizations
+                            to offer courses online.
+                        </p>
+                        <p class="footer__copyright">
+                            &copy; 2017 Scholrs Inc. All rights reserved.
+                        </p>
+                        <ul class="footer__store">
+                            <li class="footer__store-item">
+                                <a
+                                    class="footer__store-link"
+                                    href="https://www.apple.com/itunes/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        class="footer__store-img"
+                                        src="images/logo/android.png"
+                                        alt="Android"
+                                    />
+                                </a>
+                            </li>
+                            <li class="footer__store-item">
+                                <a
+                                    class="footer__store-link"
+                                    href="https://play.google.com/store"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        class="footer__store-img"
+                                        src="images/logo/apple.png"
+                                        alt="Apple"
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="footer__col">
+                        <h2 class="footer__title">Scholars</h2>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="about-us.html">About Us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Leadership</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Careers</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="faq.html">FAQ</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="contact-us.html">Contact</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="footer__col">
+                        <h2 class="footer__title">Product</h2>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Education Light</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Eucation Starter</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Eucation Premium</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Business</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Business Plus</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="footer__col">
+                        <h2 class="footer__title">Support</h2>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Support</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Toll Free Number</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Open Ticket</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">System Requirements</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Feedback</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="footer__col footer__col--subscribe">
+                        <h2 class="footer__title">Subscribe Us</h2>
+                        <p class="footer__desc">
+                            Subscribe us to get all the latest news from us
+                        </p>
+                        <form class="footer__form" action="#">
+                            <input
+                                class="footer__input"
+                                type="email"
+                                placeholder="Your Email"
+                            />
+                            <button
+                                class="footer__button hvr-rectangle-out"
+                                type="submit"
+                            >
+                                SEND
+                            </button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
