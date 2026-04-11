@@ -733,7 +733,7 @@
                         >
                             <img
                                 class="footer__logo-img"
-                                src="./images/course/logo.webp"
+                                src="./images/logo/logo.png"
                                 alt="Scholars"
                             />
                         </a>
@@ -862,5 +862,32 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            (function () {
+                var topBar = document.querySelector('.header__top-bar');
+                var header = document.querySelector('.header');
+
+                if (!topBar || !header) return;
+
+                var observer = new IntersectionObserver(
+                    function (entries) {
+                        // Khi header banner KHÔNG còn hiện trong viewport → sticky
+                        if (!entries[0].isIntersecting) {
+                            topBar.classList.add('header__top-bar--sticky');
+                        } else {
+                            topBar.classList.remove('header__top-bar--sticky');
+                        }
+                    },
+                    {
+                        // Trigger khi header banner bắt đầu rời khỏi viewport (từ trên)
+                        rootMargin: '0px 0px 0px 0px',
+                        threshold: 0,
+                    }
+                );
+
+                observer.observe(header);
+            })();
+        </script>
     </body>
 </html>
