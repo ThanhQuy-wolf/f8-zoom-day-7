@@ -340,6 +340,19 @@ body {
     color: #6f6f6f;
     outline: none;
     cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    transform-origin: left center;
+}
+
+.shop-filter__select:hover {
+    border-color: #b80257;
+    transform: scaleX(1.03);
+}
+
+.shop-filter__select:focus {
+    border-color: #783df0;
+    box-shadow: 0 0 0 3px rgba(120, 61, 240, 0.15);
+    transform: scaleX(1.03);
 }
 
 /* ============================================================
@@ -425,11 +438,19 @@ body {
     border-radius: 20px;
     background: #b80257;
     text-align: center;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transform: translateY(0);
 }
 
 .product-card__btn:hover {
     background: #783df0;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(120, 61, 240, 0.4);
+}
+
+.product-card__btn:active {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 10px rgba(120, 61, 240, 0.3);
 }
 
 /* ============================================================
