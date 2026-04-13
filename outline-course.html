@@ -241,8 +241,6 @@
             }
 
             /* ===== MAIN CONTENT ===== */
-            .main {}
-
             .main__hero {
                 background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
                 border-radius: var(--radius);
@@ -363,6 +361,7 @@
                 align-items: center;
                 gap: 14px;
                 cursor: pointer;
+                -webkit-user-select: none;
                 user-select: none;
                 transition: background var(--transition);
             }
@@ -606,36 +605,6 @@
                 background: var(--border);
                 margin: 4px 20px;
                 opacity: 0.6;
-            }
-
-            /* ===== RESPONSIVE ===== */
-            @media (max-width: 768px) {
-                .layout {
-                    grid-template-columns: 1fr;
-                    padding: 0 16px;
-                    margin: 16px auto;
-                }
-
-                .sidebar {
-                    position: static;
-                    order: -1;
-                }
-
-                .sidebar__nav {
-                    max-height: 200px;
-                }
-
-                .topbar__title {
-                    font-size: 14px;
-                }
-
-                .hero__title {
-                    font-size: 20px;
-                }
-
-                .main__hero {
-                    padding: 24px;
-                }
             }
         </style>
     </head>
