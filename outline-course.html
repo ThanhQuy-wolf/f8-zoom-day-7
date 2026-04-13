@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nội dung khoá học - F8</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* ===== RESET & BASE ===== */
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --primary: #ff5722;
+                --primary-light: #fff3f0;
+                --primary-hover: #e64a19;
+                --text-primary: #1a1a2e;
+                --text-secondary: #6b7280;
+                --text-muted: #9ca3af;
+                --bg-page: #f8f9fb;
+                --bg-card: #ffffff;
+                --bg-chapter: #f0f4ff;
+                --border: #e5e7eb;
+                --border-chapter: #c7d2fe;
+                --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+                --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+                --radius: 12px;
+                --radius-sm: 8px;
+                --sticky-top: 72px;
+                --transition: 0.2s ease;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "Inter", system-ui, sans-serif;
+                background: var(--bg-page);
+                color: var(--text-primary);
+                line-height: 1.6;
+                min-height: 100vh;
+            }
+
+            /* ===== TOP NAV ===== */
+            .topbar {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                background: var(--bg-card);
+                border-bottom: 1px solid var(--border);
+                height: var(--sticky-top);
+                display: flex;
+                align-items: center;
+                padding: 0 24px;
+                gap: 16px;
+                box-shadow: var(--shadow-sm);
+            }
+
+            .topbar__back {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                text-decoration: none;
+                color: var(--text-secondary);
+                font-size: 14px;
+                font-weight: 500;
+                padding: 8px 12px;
+                border-radius: var(--radius-sm);
+                transition: all var(--transition);
+            }
+
+            .topbar__back:hover {
+                background: var(--bg-page);
+                color: var(--text-primary);
+            }
+
+            .topbar__back svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .topbar__divider {
+                width: 1px;
+                height: 24px;
+                background: var(--border);
+            }
+
+            .topbar__title {
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--text-primary);
+                flex: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .topbar__badge {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 13px;
+                color: var(--text-secondary);
+                white-space: nowrap;
+            }
+
+            .topbar__badge span {
+                font-weight: 600;
+                color: var(--primary);
+            }
+
+            /* ===== LAYOUT ===== */
+            .layout {
+                display: grid;
+                grid-template-columns: 300px 1fr;
+                max-width: 1140px;
+                margin: 32px auto;
+                gap: 24px;
+                padding: 0 24px;
+                align-items: start;
+            }
+
+            /* ===== SIDEBAR ===== */
+            .sidebar {
+                position: sticky;
+                top: calc(var(--sticky-top) + 20px);
+                background: var(--bg-card);
+                border-radius: var(--radius);
+                border: 1px solid var(--border);
+                overflow: hidden;
+                box-shadow: var(--shadow-sm);
+            }
+
+            .sidebar__header {
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .sidebar__header h2 {
+                font-size: 15px;
+                font-weight: 700;
+                margin-bottom: 12px;
+            }
+
+            .progress-bar {
+                height: 6px;
+                background: var(--border);
+                border-radius: 99px;
+                overflow: hidden;
+            }
+
+            .progress-bar__fill {
+                height: 100%;
+                width: 28%;
+                background: linear-gradient(90deg, var(--primary), #ff8a65);
+                border-radius: 99px;
+                transition: width 0.4s ease;
+            }
+
+            .progress-label {
+                display: flex;
+                justify-content: space-between;
+                font-size: 12px;
+                color: var(--text-muted);
+                margin-top: 6px;
+            }
+
+            .progress-label strong {
+                color: var(--primary);
+                font-weight: 600;
+            }
+
+            .sidebar__nav {
+                list-style: none;
+                padding: 8px 0;
+                max-height: calc(100vh - 260px);
+                overflow-y: auto;
+            }
+
+            .sidebar__nav::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            .sidebar__nav::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            .sidebar__nav::-webkit-scrollbar-thumb {
+                background: var(--border);
+                border-radius: 2px;
+            }
+
+            .sidebar__nav-item a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 20px;
+                text-decoration: none;
+                font-size: 13px;
+                color: var(--text-secondary);
+                border-left: 3px solid transparent;
+                transition: all var(--transition);
+            }
+
+            .sidebar__nav-item a:hover {
+                background: var(--bg-page);
+                color: var(--primary);
+                border-left-color: var(--primary);
+            }
+
+            .sidebar__nav-item a.active {
+                background: var(--primary-light);
+                color: var(--primary);
+                border-left-color: var(--primary);
+                font-weight: 600;
+            }
+
+            .sidebar__nav-item .chapter-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--border);
+                flex-shrink: 0;
+                transition: background var(--transition);
+            }
+
+            .sidebar__nav-item a:hover .chapter-dot,
+            .sidebar__nav-item a.active .chapter-dot {
+                background: var(--primary);
+            }
+
+            /* ===== MAIN CONTENT ===== */
+            .main {}
+
+            .main__hero {
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+                border-radius: var(--radius);
+                padding: 36px;
+                color: #fff;
+                margin-bottom: 24px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .main__hero::before {
+                content: "";
+                position: absolute;
+                top: -40px;
+                right: -40px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: rgba(255, 87, 34, 0.15);
+            }
+
+            .main__hero::after {
+                content: "";
+                position: absolute;
+                bottom: -60px;
+                right: 60px;
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+                background: rgba(255, 87, 34, 0.08);
+            }
+
+            .hero__tag {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                background: rgba(255, 87, 34, 0.2);
+                color: #ff8a65;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 4px 12px;
+                border-radius: 99px;
+                margin-bottom: 16px;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+
+            .hero__title {
+                font-size: 26px;
+                font-weight: 700;
+                line-height: 1.3;
+                margin-bottom: 12px;
+            }
+
+            .hero__desc {
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.65);
+                max-width: 480px;
+                margin-bottom: 24px;
+            }
+
+            .hero__stats {
+                display: flex;
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+
+            .hero__stat {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.75);
+            }
+
+            .hero__stat svg {
+                width: 16px;
+                height: 16px;
+                color: #ff8a65;
+            }
+
+            .hero__stat strong {
+                color: #fff;
+                font-weight: 600;
+            }
+
+            /* ===== COURSE OUTLINE ===== */
+            .outline {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            /* Chapter item */
+            .outline > li {
+                background: var(--bg-card);
+                border-radius: var(--radius);
+                border: 1px solid var(--border);
+                overflow: hidden;
+                box-shadow: var(--shadow-sm);
+                transition: box-shadow var(--transition);
+            }
+
+            .outline > li:hover {
+                box-shadow: var(--shadow-md);
+            }
+
+            /* Chapter header — STICKY */
+            .chapter-header {
+                position: sticky;
+                top: var(--sticky-top);
+                z-index: 10;
+                background: var(--bg-chapter);
+                border-bottom: 1px solid var(--border-chapter);
+                padding: 16px 20px;
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                cursor: pointer;
+                user-select: none;
+                transition: background var(--transition);
+            }
+
+            .chapter-header:hover {
+                background: #e8eeff;
+            }
+
+            .chapter-number {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+                background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                color: #fff;
+                font-size: 13px;
+                font-weight: 700;
+                flex-shrink: 0;
+            }
+
+            .chapter-info {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .chapter-label {
+                font-size: 11px;
+                font-weight: 600;
+                color: #6366f1;
+                text-transform: uppercase;
+                letter-spacing: 0.6px;
+                margin-bottom: 2px;
+            }
+
+            .chapter-title {
+                font-size: 15px;
+                font-weight: 700;
+                color: var(--text-primary);
+                line-height: 1.3;
+            }
+
+            .chapter-meta {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                flex-shrink: 0;
+            }
+
+            .chapter-count {
+                font-size: 12px;
+                color: var(--text-muted);
+                white-space: nowrap;
+            }
+
+            .chapter-toggle {
+                width: 28px;
+                height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--bg-card);
+                border-radius: 8px;
+                color: var(--text-secondary);
+                transition: all var(--transition);
+                border: 1px solid var(--border);
+            }
+
+            .chapter-toggle svg {
+                width: 14px;
+                height: 14px;
+                transition: transform var(--transition);
+            }
+
+            .outline > li.collapsed .chapter-toggle svg {
+                transform: rotate(-90deg);
+            }
+
+            /* Lesson list */
+            .lesson-list {
+                list-style: none;
+                padding: 8px 0;
+            }
+
+            .outline > li.collapsed .lesson-list {
+                display: none;
+            }
+
+            .lesson-item {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding: 12px 20px;
+                text-decoration: none;
+                color: var(--text-primary);
+                font-size: 14px;
+                border-left: 3px solid transparent;
+                transition: all var(--transition);
+                cursor: pointer;
+                position: relative;
+            }
+
+            .lesson-item:hover {
+                background: var(--bg-page);
+                border-left-color: var(--primary);
+                color: var(--primary);
+            }
+
+            .lesson-item.completed {
+                color: var(--text-secondary);
+            }
+
+            .lesson-item.active {
+                background: var(--primary-light);
+                border-left-color: var(--primary);
+                color: var(--primary);
+                font-weight: 600;
+            }
+
+            /* Lesson icon */
+            .lesson-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 32px;
+                height: 32px;
+                border-radius: 8px;
+                flex-shrink: 0;
+                font-size: 13px;
+            }
+
+            .lesson-icon--video {
+                background: #fef3c7;
+                color: #d97706;
+            }
+
+            .lesson-icon--code {
+                background: #d1fae5;
+                color: #059669;
+            }
+
+            .lesson-icon--quiz {
+                background: #ede9fe;
+                color: #7c3aed;
+            }
+
+            .lesson-icon--doc {
+                background: #dbeafe;
+                color: #2563eb;
+            }
+
+            .lesson-icon--project {
+                background: #fce7f3;
+                color: #db2777;
+            }
+
+            .lesson-content {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .lesson-title {
+                display: block;
+                line-height: 1.4;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .lesson-subtitle {
+                display: block;
+                font-size: 12px;
+                color: var(--text-muted);
+                margin-top: 1px;
+            }
+
+            .lesson-right {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-shrink: 0;
+            }
+
+            .lesson-duration {
+                font-size: 12px;
+                color: var(--text-muted);
+                white-space: nowrap;
+            }
+
+            .lesson-check {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid var(--border);
+                color: transparent;
+                font-size: 11px;
+                flex-shrink: 0;
+                transition: all var(--transition);
+            }
+
+            .lesson-item.completed .lesson-check {
+                background: #10b981;
+                border-color: #10b981;
+                color: #fff;
+            }
+
+            .lesson-item.active .lesson-check {
+                border-color: var(--primary);
+                background: var(--primary);
+                color: #fff;
+            }
+
+            /* Free badge */
+            .badge-free {
+                font-size: 11px;
+                font-weight: 600;
+                color: #059669;
+                background: #d1fae5;
+                padding: 2px 8px;
+                border-radius: 99px;
+                letter-spacing: 0.3px;
+            }
+
+            .badge-new {
+                font-size: 11px;
+                font-weight: 600;
+                color: #d97706;
+                background: #fef3c7;
+                padding: 2px 8px;
+                border-radius: 99px;
+                letter-spacing: 0.3px;
+            }
+
+            /* Separator between groups */
+            .lesson-separator {
+                height: 1px;
+                background: var(--border);
+                margin: 4px 20px;
+                opacity: 0.6;
+            }
+
+            /* ===== RESPONSIVE ===== */
+            @media (max-width: 768px) {
+                .layout {
+                    grid-template-columns: 1fr;
+                    padding: 0 16px;
+                    margin: 16px auto;
+                }
+
+                .sidebar {
+                    position: static;
+                    order: -1;
+                }
+
+                .sidebar__nav {
+                    max-height: 200px;
+                }
+
+                .topbar__title {
+                    font-size: 14px;
+                }
+
+                .hero__title {
+                    font-size: 20px;
+                }
+
+                .main__hero {
+                    padding: 24px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ===== TOP BAR ===== -->
+        <header class="topbar">
+            <a class="topbar__back" href="./courses.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Quay lại
+            </a>
+            <div class="topbar__divider"></div>
+            <span class="topbar__title">Lập trình Web cho người mới bắt đầu</span>
+            <div class="topbar__badge">
+                Tiến độ: <span>7 / 25 bài</span>
+            </div>
+        </header>
+
+        <!-- ===== LAYOUT ===== -->
+        <div class="layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="sidebar__header">
+                    <h2>Chương trình học</h2>
+                    <div class="progress-bar">
+                        <div class="progress-bar__fill"></div>
+                    </div>
+                    <div class="progress-label">
+                        <span>Hoàn thành <strong>28%</strong></span>
+                        <span>7/25 bài</span>
+                    </div>
+                </div>
+                <ul class="sidebar__nav">
+                    <li class="sidebar__nav-item">
+                        <a href="#chapter-1" class="active">
+                            <span class="chapter-dot"></span>
+                            Chương 1: Giới thiệu
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="#chapter-2">
+                            <span class="chapter-dot"></span>
+                            Chương 2: HTML cơ bản
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="#chapter-3">
+                            <span class="chapter-dot"></span>
+                            Chương 3: CSS cơ bản
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="#chapter-4">
+                            <span class="chapter-dot"></span>
+                            Chương 4: CSS nâng cao
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="#chapter-5">
+                            <span class="chapter-dot"></span>
+                            Chương 5: JavaScript cơ bản
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="#chapter-6">
+                            <span class="chapter-dot"></span>
+                            Chương 6: Dự án thực tế
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- MAIN -->
+            <main class="main">
+
+                <!-- Hero -->
+                <div class="main__hero">
+                    <div class="hero__tag">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Khoá học nổi bật
+                    </div>
+                    <h1 class="hero__title">Lập trình Web cho người mới bắt đầu</h1>
+                    <p class="hero__desc">
+                        Từ HTML, CSS đến JavaScript — xây dựng nền tảng vững chắc để trở thành lập trình viên front-end chuyên nghiệp.
+                    </p>
+                    <div class="hero__stats">
+                        <div class="hero__stat">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <strong>18 giờ</strong> học
+                        </div>
+                        <div class="hero__stat">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <strong>12.400+</strong> học viên
+                        </div>
+                        <div class="hero__stat">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <strong>25 bài</strong> học
+                        </div>
+                        <div class="hero__stat">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            <strong>6 chương</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== COURSE OUTLINE ===== -->
+                <ul class="outline">
+
+                    <!-- CHAPTER 1 -->
+                    <li id="chapter-1">
+                        <div class="chapter-header" onclick="toggleChapter(this)">
+                            <div class="chapter-number">01</div>
+                            <div class="chapter-info">
+                                <div class="chapter-label">Chương 1</div>
+                                <div class="chapter-title">Giới thiệu khoá học & Môi trường làm việc</div>
+                            </div>
+                            <div class="chapter-meta">
+                                <span class="chapter-count">4 bài · 45 phút</span>
+                                <div class="chapter-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="lesson-list">
+                            <li>
+                                <div class="lesson-item completed">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Giới thiệu tổng quan khoá học</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="badge-free">Miễn phí</span>
+                                        <span class="lesson-duration">10:24</span>
+                                        <div class="lesson-check">✓</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item completed">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Cài đặt VS Code & Extensions cần thiết</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="badge-free">Miễn phí</span>
+                                        <span class="lesson-duration">15:00</span>
+                                        <div class="lesson-check">✓</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item active">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Làm quen với trình duyệt & DevTools</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">12:30</span>
+                                        <div class="lesson-check">▶</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--quiz">?</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Bài kiểm tra: Môi trường làm việc</span>
+                                        <span class="lesson-subtitle">Quiz · 5 câu hỏi</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">5 phút</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CHAPTER 2 -->
+                    <li id="chapter-2">
+                        <div class="chapter-header" onclick="toggleChapter(this)">
+                            <div class="chapter-number">02</div>
+                            <div class="chapter-info">
+                                <div class="chapter-label">Chương 2</div>
+                                <div class="chapter-title">HTML — Ngôn ngữ đánh dấu siêu văn bản</div>
+                            </div>
+                            <div class="chapter-meta">
+                                <span class="chapter-count">5 bài · 1h 20 phút</span>
+                                <div class="chapter-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="lesson-list">
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">HTML là gì? Cấu trúc tài liệu HTML</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">18:00</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Các thẻ HTML phổ biến: heading, paragraph, link</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">22:15</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Form HTML: input, button, select, textarea</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="badge-new">Mới</span>
+                                        <span class="lesson-duration">25:40</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--code">&lt;/&gt;</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Bài tập thực hành: Tạo trang cá nhân bằng HTML</span>
+                                        <span class="lesson-subtitle">Bài tập code</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">30 phút</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--quiz">?</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Bài kiểm tra chương 2</span>
+                                        <span class="lesson-subtitle">Quiz · 10 câu hỏi</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">10 phút</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CHAPTER 3 -->
+                    <li id="chapter-3">
+                        <div class="chapter-header" onclick="toggleChapter(this)">
+                            <div class="chapter-number">03</div>
+                            <div class="chapter-info">
+                                <div class="chapter-label">Chương 3</div>
+                                <div class="chapter-title">CSS cơ bản — Tạo phong cách cho trang web</div>
+                            </div>
+                            <div class="chapter-meta">
+                                <span class="chapter-count">5 bài · 1h 45 phút</span>
+                                <div class="chapter-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="lesson-list">
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">CSS là gì? Selector và Box Model</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">20:00</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Typography: font, color, line-height</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">18:30</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Position: static, relative, absolute, fixed</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">28:00</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Flexbox — Dàn trang linh hoạt</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="badge-new">Mới</span>
+                                        <span class="lesson-duration">35:10</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--code">&lt;/&gt;</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Bài tập: Xây dựng card component với CSS</span>
+                                        <span class="lesson-subtitle">Bài tập code</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">45 phút</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CHAPTER 4 -->
+                    <li id="chapter-4" class="collapsed">
+                        <div class="chapter-header" onclick="toggleChapter(this)">
+                            <div class="chapter-number">04</div>
+                            <div class="chapter-info">
+                                <div class="chapter-label">Chương 4</div>
+                                <div class="chapter-title">CSS nâng cao — Grid, Animation & Responsive</div>
+                            </div>
+                            <div class="chapter-meta">
+                                <span class="chapter-count">4 bài · 2h 10 phút</span>
+                                <div class="chapter-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="lesson-list">
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">CSS Grid — Hệ thống lưới 2 chiều</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">40:00</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">CSS Animation & Transition</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">32:20</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Responsive Design & Media Queries</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">38:00</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--project">★</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Mini Project: Landing page responsive</span>
+                                        <span class="lesson-subtitle">Dự án thực hành</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">60 phút</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CHAPTER 5 -->
+                    <li id="chapter-5" class="collapsed">
+                        <div class="chapter-header" onclick="toggleChapter(this)">
+                            <div class="chapter-number">05</div>
+                            <div class="chapter-info">
+                                <div class="chapter-label">Chương 5</div>
+                                <div class="chapter-title">JavaScript — Lập trình phía trình duyệt</div>
+                            </div>
+                            <div class="chapter-meta">
+                                <span class="chapter-count">5 bài · 2h 30 phút</span>
+                                <div class="chapter-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="lesson-list">
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Biến, kiểu dữ liệu và toán tử</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">25:00</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Câu lệnh điều kiện & Vòng lặp</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">30:00</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Function và Scope</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">35:00</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--video">▶</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">DOM Manipulation — Tương tác với HTML</span>
+                                        <span class="lesson-subtitle">Video bài giảng</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="badge-new">Mới</span>
+                                        <span class="lesson-duration">40:00</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--code">&lt;/&gt;</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Bài tập: To-do list app với JavaScript</span>
+                                        <span class="lesson-subtitle">Bài tập code</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">60 phút</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CHAPTER 6 -->
+                    <li id="chapter-6" class="collapsed">
+                        <div class="chapter-header" onclick="toggleChapter(this)">
+                            <div class="chapter-number">06</div>
+                            <div class="chapter-info">
+                                <div class="chapter-label">Chương 6</div>
+                                <div class="chapter-title">Dự án cuối khoá — Xây dựng website thực tế</div>
+                            </div>
+                            <div class="chapter-meta">
+                                <span class="chapter-count">2 bài · 3h 00 phút</span>
+                                <div class="chapter-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="lesson-list">
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--doc">📄</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Lên kế hoạch & thiết kế dự án</span>
+                                        <span class="lesson-subtitle">Tài liệu hướng dẫn</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">60 phút</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lesson-item">
+                                    <div class="lesson-icon lesson-icon--project">★</div>
+                                    <div class="lesson-content">
+                                        <span class="lesson-title">Final Project: Xây dựng trang web cá nhân hoàn chỉnh</span>
+                                        <span class="lesson-subtitle">Dự án thực hành · Nộp bài để review</span>
+                                    </div>
+                                    <div class="lesson-right">
+                                        <span class="lesson-duration">120 phút</span>
+                                        <div class="lesson-check"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <!-- end .outline -->
+
+            </main>
+        </div>
+
+        <script>
+            function toggleChapter(headerEl) {
+                const li = headerEl.closest("li");
+                li.classList.toggle("collapsed");
+            }
+
+            // Highlight active sidebar link on scroll
+            const chapters = document.querySelectorAll(".outline > li");
+            const sidebarLinks = document.querySelectorAll(".sidebar__nav-item a");
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.id;
+                            sidebarLinks.forEach((link) => {
+                                link.classList.toggle(
+                                    "active",
+                                    link.getAttribute("href") === `#${id}`
+                                );
+                            });
+                        }
+                    });
+                },
+                {
+                    rootMargin: `-${parseInt(getComputedStyle(document.documentElement).getPropertyValue("--sticky-top"))}px 0px -60% 0px`,
+                }
+            );
+
+            chapters.forEach((ch) => observer.observe(ch));
+        </script>
+    </body>
+</html>
